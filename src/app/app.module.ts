@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   {path: 'contacts', component: ContactsComponent},
   {path: 'new-contact', component: NewContactComponent},
   { path: 'edit-contact/:id', component: EditContactComponent},
-  {path: '', component: AboutComponent, pathMatch: 'full'},
+  {path: '', component: ContactsComponent, pathMatch: 'full'},
 ];
 @NgModule({
   declarations: [
