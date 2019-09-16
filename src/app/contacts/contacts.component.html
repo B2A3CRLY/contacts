@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="panel panel-danger">
+    <div class="row">
+      <div class="col-md-4 offset-md-4"><h1 class="text-danger">Contacts List</h1></div>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label></label>
+        <input type="text" [(ngModel)]="motCle"/>
+        <button class="btn-danger" (click)="chercher()">Chercher</button>
+      </div>
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+          <th>#</th><th>Last Name</th><th>First Name</th><th>Email</th><th>Phone</th><th>actions</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let contact of pageContact?.content">
+          <td>{{contact.id}}</td>
+          <td>{{contact.nom}}</td>
+          <td>{{contact.prenom}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.tel}}</td>
+          <td><button class="btn-success mr-2" [routerLink]="['/edit-contact',contact.id]">edit</button><button class="btn-danger" (click)="onDelete(contact.id)">delete</button></td>
+        </tr>
+      </table>
+      <div class="container col-md-4 offset-md-4">
+        <ul class="nav nav-pills">
+          <li *ngFor="let p of pages; let i=index" [ngClass] ="{'active':i==page}" class="ml-3"><a class="pointer text-warning" (click)="gotoPage(i)">{{i}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

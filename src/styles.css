@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+#ex1{
+  background-image: url("./assets/horizon.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+}
+#ex2{
+  width: 100%;
+  height: 50%;
+}
+td{
+  color: white;
+}
