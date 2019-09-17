@@ -22,7 +22,7 @@ export class ContactsComponent implements OnInit {
     }, err => {
       console.log(err);
     });*/
-    this.getContacts();
+    this.doSearch();
 
   }
   getContacts() {
