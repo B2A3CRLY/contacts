@@ -22,8 +22,11 @@ export class ContactsComponent implements OnInit {
     }, err => {
       console.log(err);
     });*/
-    this.doSearch();
+    this.getContacts();
 
+  }
+  getContacts() {
+    this.contactService.getContacts();
   }
   doSearch() {
     this.contactService.searchContacts(this.motCle, this.page, this.size).subscribe(data => {

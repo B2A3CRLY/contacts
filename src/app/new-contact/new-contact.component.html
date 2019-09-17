@@ -55,7 +55,7 @@
           <label class="control-label mr-3">Tel : </label>
           <label class="control-label">{{contact.tel}}</label>
         </div>
-        <button class="btn btn-danger" (click)="mode=1">New contact</button>
+        <button class="btn btn-danger" [routerLink]="['/new-contact']">New contact</button>
       </div>
     </div>
   </div>
