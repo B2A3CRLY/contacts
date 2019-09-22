@@ -4,7 +4,7 @@
       <div class="col-md-4 offset-md-4"><h1 class="text-danger">New contact</h1></div>
     </div>
     <div class="col-md-4 offset-md-4">
-      <from [formGroup]="angForm">
+      <form [formGroup]="angForm">
         <div class="form-group">
           <label class="control-label">First name</label>
           <input type="text" class="form-control" formControlName="prenom" placeholder="enter your first name" [(ngModel)]="contact.prenom"/>
@@ -51,7 +51,7 @@
           </div>
         </div>
         <button class="btn btn-danger col-md-4 offset-md-4" (click)="saveContact()">save contact</button>
-      </from>
+      </form>
     </div>
   </div>
   <div class="panel" *ngIf="mode==2">
