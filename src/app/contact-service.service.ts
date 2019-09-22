@@ -6,8 +6,8 @@ import {Contact} from '../model/model.contact';
   providedIn: 'root'
 })
 export class ContactServiceService {
-  url = 'http://localhost:8080/';
-  // url = 'https://contact-spring-boot.herokuapp.com/';
+  // url = 'http://localhost:8080/';
+  url = 'https://contact-spring-boot.herokuapp.com/';
   constructor(private http: HttpClient) { }
   getContacts() {
     return this.http.get(this.url + 'contacts');
