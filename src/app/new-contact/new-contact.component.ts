@@ -9,7 +9,7 @@ import {Routes } from '@angular/router';
   styleUrls: ['./new-contact.component.css']
 })
 export class NewContactComponent implements OnInit {
-  contact: Contact = new Contact();
+  contact: Contact;
   constructor(public contactService: ContactServiceService) { }
   mode = 1;
   ngOnInit() {
