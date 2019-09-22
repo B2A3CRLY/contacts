@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Contact} from '../../model/model.contact';
 import {ContactServiceService} from '../contact-service.service';
+import {Routes } from '@angular/router';
 
 @Component({
   selector: 'app-new-contact',
@@ -21,5 +22,8 @@ export class NewContactComponent implements OnInit {
       , err => {
       console.log(err);
     });
+  }
+  goHome() {
+
   }
 }

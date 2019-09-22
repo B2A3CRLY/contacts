@@ -1,3 +1,55 @@
-<p>
-  edit-contact works!
-</p>
+<div class="container-fluid"id="ex2">
+    <div class="row">
+      <div class="col-md-4 offset-md-4"><h1 class="text-danger">Edit Contact</h1></div>
+    </div>
+    <div class="col-md-4 offset-md-4">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="control-label">First name</label>
+          <input type="text" class="form-control" formControlName="prenom" #prenom  placeholder="enter your first name" [(ngModel)]="contact.prenom"/>
+        </div>
+        <div *ngIf="angForm.controls['prenom'].invalid && (angForm.controls['prenom'].dirty || angForm.controls['prenom'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['prenom'].errors.required">
+            First Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Last name</label>
+          <input type="text" class="form-control" formControlName="nom" #nom placeholder="enter your last name" [(ngModel)]="contact.nom"/>
+        </div>
+        <div *ngIf="angForm.controls['nom'].invalid && (angForm.controls['nom'].dirty || angForm.controls['nom'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['nom'].errors.required">
+            Last Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Email</label>
+          <input type="text" class="form-control" formControlName="email" #email placeholder="enter your email" [(ngModel)]="contact.email"/>
+        </div>
+        <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['email'].errors.required">
+            Email is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Date of birth</label>
+          <input type="date" class="form-control" formControlName="dateNaissance" #dateNaissance placeholder="enter your date of birth" [(ngModel)]="contact.dateNaissance"/>
+        </div>
+        <div *ngIf="angForm.controls['dateNaissance'].invalid && (angForm.controls['dateNaissance'].dirty || angForm.controls['dateNaissance'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['dateNaissance'].errors.required">
+            Date of birth is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Tel</label>
+          <input type="text" class="form-control" formControlName="tel" #tel placeholder="please respect this form 775977255" [(ngModel)]="contact.tel"/>
+        </div>
+        <div *ngIf="angForm.controls['tel'].invalid && (angForm.controls['tel'].dirty || angForm.controls['tel'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['tel'].errors.required">
+            Phone is required.
+          </div>
+        </div>
+        <button class="btn btn-danger col-md-4 offset-md-4" (click)="updateContact()" [disabled]="angForm.invalid">save contact</button>
+      </form>
+  </div>
+</div>

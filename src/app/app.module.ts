@@ -8,7 +8,7 @@ import { AboutComponent } from './about/about.component';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {ContactServiceService} from './contact-service.service';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NewContactComponent } from './new-contact/new-contact.component';
 import { EditContactComponent } from './edit-contact/edit-contact.component';
 
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'contacts', component: ContactsComponent},
   {path: 'new-contact', component: NewContactComponent},
-  { path: 'edit-contact/:id', component: EditContactComponent},
+  {path: 'edit-contact/:id', component: EditContactComponent},
   {path: '', component: ContactsComponent, pathMatch: 'full'},
 ];
 @NgModule({
@@ -33,7 +33,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    FormsModule
+    FormsModule, ReactiveFormsModule
   ],
   providers: [ContactServiceService],
   bootstrap: [AppComponent]
