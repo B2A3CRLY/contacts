@@ -44,7 +44,7 @@ export class EditContactComponent implements OnInit {
     console.log('nom:' + contactValue.nom)
     console.log('edit:', contact);
     this.route.params.subscribe(params => {
-      this.contactService.updateContact(params.id, contact).subscribe(res =>{
+      this.contactService.updateContact(params.id, contact).subscribe(res => {
         console.log('data:' + res);
       });
     });
